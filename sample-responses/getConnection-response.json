@@ -1,0 +1,41 @@
+{
+  "connectorLabel": "Heroku PostgreSQL",
+  "connectorType": "HerokuPostgres",
+  "createdDate": "2025-04-28T17:02:44.000Z",
+  "credentials": [
+    {
+      "paramName": "credentialType",
+      "value": "UsernamePasswordAuthentication"
+    },
+    {
+      "paramName": "user",
+      "value": "read_only_user"
+    }
+  ],
+  "deletable": true,
+  "editable": true,
+  "iconUrl": "/cdp/images/connectors/HerokuPostgres.svg",
+  "id": "9cgHo000000wl7TIAQ",
+  "label": "Dataverse",
+  "lastModifiedDate": "2025-04-28T17:04:03.000Z",
+  "method": "Ingress",
+  "name": "Dataverse",
+  "namespace": "",
+  "params": [
+    {
+      "paramName": "jdbc_connection_url",
+      "value": "ec2-34-239-63-69.compute-1.amazonaws.com"
+    },
+    {
+      "paramName": "SCHEMA",
+      "value": "public"
+    },
+    {
+      "paramName": "DATABASE",
+      "value": "d2pbagf1jq37ti"
+    }
+  ],
+  "status": "Active",
+  "syncStatus": "None",
+  "url": "/services/data/v63.0/ssot/connections/9cgHo000000wl7TIAQ"
+}

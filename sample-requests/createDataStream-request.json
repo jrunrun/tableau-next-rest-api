@@ -1,0 +1,122 @@
+{
+  "connectorInfo": {
+    "connectorDetails": {
+      "name": "Dataverse",
+      "sourceObject": "d2pbagf1jq37ti"
+    },
+    "connectorType": "HerokuPostgres"
+  },
+  "dataLakeObjectInfo": {
+    "category": "Engagement",
+    "dataspaceInfo": [
+      {
+        "name": "default"
+      }
+    ],
+    "label": "Insurance_Claims_Dataverse_1745859943423"
+  },
+  "name": "Justin_Test_Dataverse",
+  "label": "Justin_Test_Dataverse",
+  "datastreamType": "CONNECTORSFRAMEWORK",
+  "refreshConfig": {
+    "frequency": {
+      "hours": [],
+      "refreshDayOfMonth": []
+    },
+    "hasHeaders": false,
+    "isAccelerationEnabled": false,
+    "refreshMode": "TOTAL_REPLACE",
+    "shouldFetchImmediately": false,
+    "shouldTreatMissingFilesAsFailures": false
+  },
+  "datasource": "HerokuPostgres_Dataverse",
+  "sourceFields": [
+    {
+      "datatype": "Text",
+      "name": "Agent"
+    },
+    {
+      "datatype": "Text",
+      "name": "Policy Type"
+    },
+    {
+      "datatype": "Number",
+      "name": "Annualized Premium Amount"
+    },
+    {
+      "datatype": "Text",
+      "name": "Business Line"
+    },
+    {
+      "datatype": "Text",
+      "name": "City"
+    },
+    {
+      "datatype": "Text",
+      "name": "Claim Number"
+    },
+    {
+      "datatype": "Number",
+      "name": "Claim Paid Amount"
+    },
+    {
+      "datatype": "Text",
+      "name": "Claim Process Status"
+    },
+    {
+      "datatype": "Text",
+      "name": "Claim Reason"
+    },
+    {
+      "datatype": "Text",
+      "name": "Claim Status"
+    },
+    {
+      "datatype": "DateTime",
+      "format": "MM/dd/yyyy HH:mm:ss.SSS",
+      "name": "Close Date"
+    },
+    {
+      "datatype": "Text",
+      "name": "County"
+    },
+    {
+      "datatype": "Number",
+      "name": "Damages Amount"
+    },
+    {
+      "datatype": "Number",
+      "name": "Deductible"
+    },
+    {
+      "datatype": "DateTime",
+      "format": "MM/dd/yyyy HH:mm:ss.SSS",
+      "name": "Event Date"
+    },
+    {
+      "datatype": "Text",
+      "name": "Is Closed Flag"
+    },
+    {
+      "datatype": "Text",
+      "name": "Is Reimbursed Flag"
+    },
+    {
+      "datatype": "DateTime",
+      "format": "MM/dd/yyyy HH:mm:ss.SSS",
+      "name": "Open Date"
+    },
+    {
+      "datatype": "Text",
+      "name": "Policy Holder"
+    },
+    {
+      "datatype": "Text",
+      "name": "Policy Number"
+    },
+    {
+      "datatype": "Text",
+      "name": "Agent Group"
+    }
+  ]
+}

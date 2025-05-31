@@ -1,0 +1,473 @@
+{
+  "advancedAttributes": {
+    "objectName": "Insurance Claims"
+  },
+  "capabilities": {},
+  "connectorInfo": {
+    "connectorType": "HerokuPostgres"
+  },
+  "dataAccessMode": "INGEST",
+  "dataLakeObjectInfo": {
+    "category": "Engagement",
+    "dataLakeFieldInfoRepresentation": [
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Annualized Premium Amount",
+        "name": "Annualized_Premium_Amount"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Claim Paid Amount",
+        "name": "Claim_Paid_Amount"
+      },
+      {
+        "dataType": "DateTime",
+        "isPrimaryKey": false,
+        "label": "Close Date",
+        "name": "Close_Date"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Claim Number",
+        "name": "Claim_Number"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source Object",
+        "name": "DataSourceObject"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Claim Status",
+        "name": "Claim_Status"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Policy Holder",
+        "name": "Policy_Holder"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source",
+        "name": "DataSource"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "City",
+        "name": "City"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Agent Group",
+        "name": "Agent_Group"
+      },
+      {
+        "dataType": "DateTime",
+        "isPrimaryKey": false,
+        "label": "Open Date",
+        "name": "Open_Date"
+      },
+      {
+        "dataType": "DateTime",
+        "isPrimaryKey": false,
+        "label": "cdp_sys_PartitionDate",
+        "name": "cdp_sys_PartitionDate"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "County",
+        "name": "County"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "KQ_Policy_Number",
+        "name": "KQ_Policy_Number"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": true,
+        "label": "Policy Number",
+        "name": "Policy_Number"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Agent",
+        "name": "Agent"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Damages Amount",
+        "name": "Damages_Amount"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Business Line",
+        "name": "Business_Line"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Is Reimbursed Flag",
+        "name": "Is_Reimbursed_Flag"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Is Closed Flag",
+        "name": "Is_Closed_Flag"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Policy Type",
+        "name": "Policy_Type"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Internal Organization",
+        "name": "InternalOrganization"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Claim Process Status",
+        "name": "Claim_Process_Status"
+      },
+      {
+        "dataType": "DateTime",
+        "isPrimaryKey": false,
+        "label": "Event Date",
+        "name": "Event_Date"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Deductible",
+        "name": "Deductible"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Claim Reason",
+        "name": "Claim_Reason"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "cdp_sys_SourceVersion",
+        "name": "cdp_sys_SourceVersion"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "KQ_Policy_Holder",
+        "name": "KQ_Policy_Holder"
+      }
+    ],
+    "dataSpaceInfo": [
+      {
+        "label": "default",
+        "name": "default"
+      }
+    ],
+    "eventDateTimeFieldName": "Open_Date",
+    "fields": [
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Annualized Premium Amount",
+        "name": "Annualized_Premium_Amount"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Claim Paid Amount",
+        "name": "Claim_Paid_Amount"
+      },
+      {
+        "dataType": "DateTime",
+        "isPrimaryKey": false,
+        "label": "Close Date",
+        "name": "Close_Date"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Claim Number",
+        "name": "Claim_Number"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source Object",
+        "name": "DataSourceObject"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Claim Status",
+        "name": "Claim_Status"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Policy Holder",
+        "name": "Policy_Holder"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source",
+        "name": "DataSource"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "City",
+        "name": "City"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Agent Group",
+        "name": "Agent_Group"
+      },
+      {
+        "dataType": "DateTime",
+        "isPrimaryKey": false,
+        "label": "Open Date",
+        "name": "Open_Date"
+      },
+      {
+        "dataType": "DateTime",
+        "isPrimaryKey": false,
+        "label": "cdp_sys_PartitionDate",
+        "name": "cdp_sys_PartitionDate"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "County",
+        "name": "County"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "KQ_Policy_Number",
+        "name": "KQ_Policy_Number"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": true,
+        "label": "Policy Number",
+        "name": "Policy_Number"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Agent",
+        "name": "Agent"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Damages Amount",
+        "name": "Damages_Amount"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Business Line",
+        "name": "Business_Line"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Is Reimbursed Flag",
+        "name": "Is_Reimbursed_Flag"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Is Closed Flag",
+        "name": "Is_Closed_Flag"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Policy Type",
+        "name": "Policy_Type"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Internal Organization",
+        "name": "InternalOrganization"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Claim Process Status",
+        "name": "Claim_Process_Status"
+      },
+      {
+        "dataType": "DateTime",
+        "isPrimaryKey": false,
+        "label": "Event Date",
+        "name": "Event_Date"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Deductible",
+        "name": "Deductible"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Claim Reason",
+        "name": "Claim_Reason"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "cdp_sys_SourceVersion",
+        "name": "cdp_sys_SourceVersion"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "KQ_Policy_Holder",
+        "name": "KQ_Policy_Holder"
+      }
+    ],
+    "id": "0gOHo000000PFZSMA4",
+    "label": "Insurance_Claims_Dataverse_1745859943423",
+    "name": "Insurance_Claims_Dataverse_1745859943423__dll",
+    "status": "ACTIVE"
+  },
+  "dataSource": "HerokuPostgres_Dataverse",
+  "dataStreamType": "CONNECTORSFRAMEWORK",
+  "isEnabled": true,
+  "label": "Insurance_Claims_Dataverse_1745859943423",
+  "lastRunStatus": "NONE",
+  "mappings": [],
+  "name": "Insurance_Claims_Dataverse_1745859943423",
+  "recordId": "1dsHo000000GsS1IAK",
+  "refreshConfig": {
+    "frequency": {
+      "hours": [],
+      "refreshDayOfMonth": []
+    },
+    "hasHeaders": false,
+    "isAccelerationEnabled": false,
+    "refreshMode": "TOTAL_REPLACE",
+    "shouldFetchImmediately": false,
+    "shouldTreatMissingFilesAsFailures": false
+  },
+  "sourceFields": [
+    {
+      "datatype": "Text",
+      "name": "Agent"
+    },
+    {
+      "datatype": "Text",
+      "name": "Policy Type"
+    },
+    {
+      "datatype": "Number",
+      "name": "Annualized Premium Amount"
+    },
+    {
+      "datatype": "Text",
+      "name": "Business Line"
+    },
+    {
+      "datatype": "Text",
+      "name": "City"
+    },
+    {
+      "datatype": "Text",
+      "name": "Claim Number"
+    },
+    {
+      "datatype": "Number",
+      "name": "Claim Paid Amount"
+    },
+    {
+      "datatype": "Text",
+      "name": "Claim Process Status"
+    },
+    {
+      "datatype": "Text",
+      "name": "Claim Reason"
+    },
+    {
+      "datatype": "Text",
+      "name": "Claim Status"
+    },
+    {
+      "datatype": "DateTime",
+      "format": "MM/dd/yyyy HH:mm:ss.SSS",
+      "name": "Close Date"
+    },
+    {
+      "datatype": "Text",
+      "name": "County"
+    },
+    {
+      "datatype": "Number",
+      "name": "Damages Amount"
+    },
+    {
+      "datatype": "Number",
+      "name": "Deductible"
+    },
+    {
+      "datatype": "DateTime",
+      "format": "MM/dd/yyyy HH:mm:ss.SSS",
+      "name": "Event Date"
+    },
+    {
+      "datatype": "Text",
+      "name": "Is Closed Flag"
+    },
+    {
+      "datatype": "Text",
+      "name": "Is Reimbursed Flag"
+    },
+    {
+      "datatype": "DateTime",
+      "format": "MM/dd/yyyy HH:mm:ss.SSS",
+      "name": "Open Date"
+    },
+    {
+      "datatype": "Text",
+      "name": "Policy Holder"
+    },
+    {
+      "datatype": "Text",
+      "name": "Policy Number"
+    },
+    {
+      "datatype": "Text",
+      "name": "Agent Group"
+    }
+  ],
+  "status": "ACTIVE"
+}

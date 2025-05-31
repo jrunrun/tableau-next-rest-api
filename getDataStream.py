@@ -1,8 +1,12 @@
 import requests
 import json
 
-# getSemanticModelCollection
-# GET http:///services/data/v62.0/ssot/semantic/models
+# getDataStream
+# GET
+# https://{dne_cdpInstanceUrl}/services/data/v64.0/ssot/data-streams/{recordIdOrDeveloperName}
+# Get a data stream.
+
+# Available Version: 60.0
 
 
 def get_auth_token(org, client_id, client_secret):
@@ -20,8 +24,11 @@ def get_auth_token(org, client_id, client_secret):
     print(json.dumps(req.json(), indent=2))
     return req.json()['access_token']
 
-def get_semantic_models(org, auth_token):
-    url = f'https://{org}/services/data/v62.0/ssot/semantic/models'
+
+def get_data_stream(org, auth_token, version, recordIdOrDeveloperName):
+    url = f'https://{org}/services/data/{version}/ssot/data-streams/{recordIdOrDeveloperName}'
+
+    print(f"URL for getting data streams: {url}")
 
     headers = {
         'Content-Type': 'application/json',
@@ -35,23 +42,33 @@ def get_semantic_models(org, auth_token):
     print(json.dumps(dict(req.headers), indent=2))
     print("\nResponse Body:")
 
-    # Save the formatted JSON response to a file
-    with open('semantic_model_response.json', 'w') as f:
-        json.dump(req.json(), f, indent=2)
+    if req.status_code == 200:
+        # Save the formatted JSON response to a file
+        with open('./sample-responses/getDataStream-response.json', 'w') as f:
+            json.dump(req.json(), f, indent=2)
 
-    print("Response has been saved to semantic_model_response.json")
+        print("Response has been saved to getDataStream-response.json")
 
-    # Print to console
-    print(json.dumps(req.json(), indent=2))
+        # Print to console
+        print(json.dumps(req.json(), indent=2))
+    else:
+        print(f"Status Code: {req.status_code}")
+        print("\nHeaders:")
+        print(json.dumps(dict(req.headers), indent=2))
+        print("\nResponse Body:")
+        print(f"Error: {req.text}")
 
 # # This works:
 # Brian's Tab Next org:
+# org = 'g43wknrqmjqtgyjzh0ytg9bvh0.c360a.salesforce.com'
 org = 'storm-dc631f52cc1aeb.my.salesforce.com'
 client_id = '3MVG9Rr0EZ2YOVMb5hDLho4ts6.27uw4kvfO9UkOFoRBAsqB96g5uInaQxhNLDziFmAQ37cSShk6oP1AlKIAc'
 client_secret = 'CCB1D74A53C328EA748FBF5F4BB2AE4CE50107582B1CDEFE049BF8F1C3576444'
+version = 'v63.0'
+recordIdOrDeveloperName = 'Insurance_Claims_Dataverse_1745859943423__dll'
 
 # This works:
-# Justin's Tab Next org (Radhika instructions via Orgfarm):
+# # Justin's Tab Next org (Radhika instructions via Orgfarm):
 # org = 'orgfarm-ef60436573.test13.my.pc-rnd.salesforce.com'
 # client_id = '3MVG9kfeuo6xCm.pZ4_qdu_PhqIsuIBOpnpN_p66AXqTIVnptJ21r2NaGIf6WlnJJPRyiciWzhZiBZ1SNLgM9'
 # client_secret = '80733EDD3B5BFBD8D55CF08E4C736C6118EB78A25D75AD6C09336C6D77C56071'
@@ -75,6 +92,10 @@ client_secret = 'CCB1D74A53C328EA748FBF5F4BB2AE4CE50107582B1CDEFE049BF8F1C357644
 auth_token = get_auth_token(org, client_id, client_secret)
 
 # Get semantic models
-get_semantic_models(org, auth_token)
+get_data_stream(org, auth_token, version, recordIdOrDeveloperName)
+
+
+
+
 
 

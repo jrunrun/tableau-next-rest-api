@@ -1,0 +1,25 @@
+{
+  "connections": [
+    {
+      "connectorLabel": "Heroku PostgreSQL",
+      "connectorType": "HerokuPostgres",
+      "createdDate": "2025-04-28T17:02:44.000Z",
+      "credentials": [],
+      "deletable": true,
+      "editable": true,
+      "iconUrl": "/cdp/images/connectors/HerokuPostgres.svg",
+      "id": "9cgHo000000wl7TIAQ",
+      "label": "Dataverse",
+      "lastModifiedDate": "2025-04-28T17:04:03.000Z",
+      "method": "Ingress",
+      "name": "Dataverse",
+      "namespace": "",
+      "params": [],
+      "status": "Active",
+      "syncStatus": "None",
+      "url": "/services/data/v63.0/ssot/connections/9cgHo000000wl7TIAQ"
+    }
+  ],
+  "currentPageUrl": "/services/data/v63.0/ssot/connections?connectorType=HerokuPostgres&limit=0&offset=50",
+  "totalSize": 1
+}

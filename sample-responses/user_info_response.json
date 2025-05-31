@@ -1,0 +1,48 @@
+{
+  "sub": "https://login.salesforce.com/id/00DHo000003yF1pMAE/005Ho00000KayrgIAB",
+  "user_id": "005Ho00000KayrgIAB",
+  "organization_id": "00DHo000003yF1pMAE",
+  "preferred_username": "storm.dc631f52cc1aeb@salesforce.com",
+  "nickname": "Storm",
+  "name": "Brian King",
+  "email": "b.king+00dho000003yf1p@salesforce.com",
+  "email_verified": true,
+  "given_name": "Brian",
+  "family_name": "King",
+  "zoneinfo": "America/Los_Angeles",
+  "photos": {
+    "picture": "https://storm-dc631f52cc1aeb.file.force.com/profilephoto/005/F",
+    "thumbnail": "https://storm-dc631f52cc1aeb.file.force.com/profilephoto/005/T"
+  },
+  "profile": "https://storm-dc631f52cc1aeb.my.salesforce.com/005Ho00000KayrgIAB",
+  "picture": "https://storm-dc631f52cc1aeb.file.force.com/profilephoto/005/F",
+  "address": {
+    "country": "US"
+  },
+  "is_salesforce_integration_user": false,
+  "urls": {
+    "enterprise": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/Soap/c/{version}/00DHo000003yF1p",
+    "metadata": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/Soap/m/{version}/00DHo000003yF1p",
+    "partner": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/Soap/u/{version}/00DHo000003yF1p",
+    "rest": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/",
+    "sobjects": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/sobjects/",
+    "search": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/search/",
+    "query": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/query/",
+    "recent": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/recent/",
+    "tooling_soap": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/Soap/T/{version}/00DHo000003yF1p",
+    "tooling_rest": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/tooling/",
+    "profile": "https://storm-dc631f52cc1aeb.my.salesforce.com/005Ho00000KayrgIAB",
+    "feeds": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/chatter/feeds",
+    "groups": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/chatter/groups",
+    "users": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/chatter/users",
+    "feed_items": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/chatter/feed-items",
+    "feed_elements": "https://storm-dc631f52cc1aeb.my.salesforce.com/services/data/v{version}/chatter/feed-elements",
+    "custom_domain": "https://storm-dc631f52cc1aeb.my.salesforce.com"
+  },
+  "active": true,
+  "user_type": "STANDARD",
+  "language": "en_US",
+  "locale": "en_US",
+  "utcOffset": -28800000,
+  "updated_at": "2025-04-24T22:07:03Z"
+}
