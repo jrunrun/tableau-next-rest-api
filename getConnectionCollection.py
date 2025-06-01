@@ -24,7 +24,7 @@ def get_auth_token(org, client_id, client_secret):
     return req.json()['access_token']
 
 
-def get_connections(org, auth_token, version):
+def get_connections(org, auth_token, version, connectorType):
     base_url = f'https://{org}/services/data/{version}/ssot/connections'
     
     print(f"URL for getting connections: {base_url}")
@@ -35,7 +35,7 @@ def get_connections(org, auth_token, version):
     }
 
     params = {
-        'connectorType': 'HerokuPostgres'
+        'connectorType': connectorType
     }
 
     req = requests.get(base_url, headers=headers, params=params)
@@ -68,6 +68,7 @@ org = 'storm-dc631f52cc1aeb.my.salesforce.com'
 client_id = '3MVG9Rr0EZ2YOVMb5hDLho4ts6.27uw4kvfO9UkOFoRBAsqB96g5uInaQxhNLDziFmAQ37cSShk6oP1AlKIAc'
 client_secret = 'CCB1D74A53C328EA748FBF5F4BB2AE4CE50107582B1CDEFE049BF8F1C3576444'
 version = 'v63.0'
+connectorType = 'UploadedFiles'
 
 # This works:
 # # Justin's Tab Next org (Radhika instructions via Orgfarm):
@@ -81,20 +82,11 @@ version = 'v63.0'
 # client_id = '3MVG9aNlkJwuH9vNgV7dXX1mD8GNBYtkSyCXndzm6SOm.MbFeeb91ah9LUompVf83kEnPwbcpdSCJyDJZZti5'
 # client_secret = '5221881FFC65D1D328C202C8BAC234209A9F515A01C402A3CD5FBFCEB7E00570'
 
-
-
-
-
-
-
-
-
-
 # Get auth token    
 auth_token = get_auth_token(org, client_id, client_secret)
 
 # Get semantic models
-get_connections(org, auth_token, version)
+get_connections(org, auth_token, version, connectorType)
 
 
 

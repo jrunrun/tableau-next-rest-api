@@ -1,25 +1,25 @@
 {
   "connections": [
     {
-      "connectorLabel": "Heroku PostgreSQL",
-      "connectorType": "HerokuPostgres",
-      "createdDate": "2025-04-28T17:02:44.000Z",
+      "connectorLabel": "File Upload",
+      "connectorType": "UploadedFiles",
+      "createdDate": "2025-04-28T16:27:33.000Z",
       "credentials": [],
-      "deletable": true,
-      "editable": true,
-      "iconUrl": "/cdp/images/connectors/HerokuPostgres.svg",
-      "id": "9cgHo000000wl7TIAQ",
-      "label": "Dataverse",
-      "lastModifiedDate": "2025-04-28T17:04:03.000Z",
+      "deletable": false,
+      "editable": false,
+      "iconUrl": "/cdp/images/connectors/UploadedFiles.svg",
+      "id": "9cgHo000000wl7JIAQ",
+      "label": "UploadedFiles",
+      "lastModifiedDate": "2025-04-28T16:27:33.000Z",
       "method": "Ingress",
-      "name": "Dataverse",
+      "name": "UploadedFiles",
       "namespace": "",
       "params": [],
       "status": "Active",
       "syncStatus": "None",
-      "url": "/services/data/v63.0/ssot/connections/9cgHo000000wl7TIAQ"
+      "url": "/services/data/v63.0/ssot/connections/9cgHo000000wl7JIAQ"
     }
   ],
-  "currentPageUrl": "/services/data/v63.0/ssot/connections?connectorType=HerokuPostgres&limit=0&offset=50",
+  "currentPageUrl": "/services/data/v63.0/ssot/connections?connectorType=UploadedFiles&limit=0&offset=50",
   "totalSize": 1
 }

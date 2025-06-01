@@ -1,56 +1,54 @@
 {
   "advancedAttributes": {
-    "objectName": "Insurance Claims"
+    "importDirectory": "005Ho00000KbiO7IAJ/2025-05-31T19:35:28.128Z",
+    "fileName": "Sample - Superstore - Orders.csv",
+    "delimiter": ",",
+    "parentDirectory": "s3://aws-prod1-useast1-cdp3-lakehouse-1/sfdrive/a360-prod-1aa1970a05b744ef86be2f5c8fb49a5d/flup-fileUploads/dc_file_upload",
+    "fileType": "CSV"
   },
   "capabilities": {},
   "connectorInfo": {
-    "connectorType": "HerokuPostgres"
+    "connectorType": "UploadedFiles"
   },
   "dataAccessMode": "INGEST",
   "dataLakeObjectInfo": {
-    "category": "Engagement",
+    "category": "Profile",
     "dataLakeFieldInfoRepresentation": [
       {
         "dataType": "Number",
         "isPrimaryKey": false,
-        "label": "Annualized Premium Amount",
-        "name": "Annualized_Premium_Amount"
+        "label": "Discount",
+        "name": "Discount"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Segment",
+        "name": "Segment"
       },
       {
         "dataType": "Number",
         "isPrimaryKey": false,
-        "label": "Claim Paid Amount",
-        "name": "Claim_Paid_Amount"
-      },
-      {
-        "dataType": "DateTime",
-        "isPrimaryKey": false,
-        "label": "Close Date",
-        "name": "Close_Date"
+        "label": "Quantity",
+        "name": "Quantity"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Claim Number",
-        "name": "Claim_Number"
+        "label": "Customer Name",
+        "name": "Customer_Name"
       },
       {
-        "dataType": "Text",
+        "dataType": "Date",
         "isPrimaryKey": false,
-        "label": "Data Source Object",
-        "name": "DataSourceObject"
+        "label": "Order Date",
+        "name": "Order_Date"
       },
       {
-        "dataType": "Text",
+        "dataType": "Number",
         "isPrimaryKey": false,
-        "label": "Claim Status",
-        "name": "Claim_Status"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "Policy Holder",
-        "name": "Policy_Holder"
+        "label": "Sales",
+        "name": "Sales"
       },
       {
         "dataType": "Text",
@@ -61,80 +59,92 @@
       {
         "dataType": "Text",
         "isPrimaryKey": false,
+        "label": "Row ID",
+        "name": "Row_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Customer ID",
+        "name": "Customer_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "KQ_Order_ID",
+        "name": "KQ_Order_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": true,
+        "label": "Order ID",
+        "name": "Order_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Ship Mode",
+        "name": "Ship_Mode"
+      },
+      {
+        "dataType": "Date",
+        "isPrimaryKey": false,
+        "label": "Ship Date",
+        "name": "Ship_Date"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "State/Province",
+        "name": "State_Province"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source Object",
+        "name": "DataSourceObject"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
         "label": "City",
         "name": "City"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Agent Group",
-        "name": "Agent_Group"
-      },
-      {
-        "dataType": "DateTime",
-        "isPrimaryKey": false,
-        "label": "Open Date",
-        "name": "Open_Date"
-      },
-      {
-        "dataType": "DateTime",
-        "isPrimaryKey": false,
-        "label": "cdp_sys_PartitionDate",
-        "name": "cdp_sys_PartitionDate"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "County",
-        "name": "County"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "KQ_Policy_Number",
-        "name": "KQ_Policy_Number"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": true,
-        "label": "Policy Number",
-        "name": "Policy_Number"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "Agent",
-        "name": "Agent"
+        "label": "Product Name",
+        "name": "Product_Name"
       },
       {
         "dataType": "Number",
         "isPrimaryKey": false,
-        "label": "Damages Amount",
-        "name": "Damages_Amount"
+        "label": "Postal Code",
+        "name": "Postal_Code"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Business Line",
-        "name": "Business_Line"
+        "label": "Product ID",
+        "name": "Product_ID"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Is Reimbursed Flag",
-        "name": "Is_Reimbursed_Flag"
+        "label": "Country/Region",
+        "name": "Country_Region"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Profit",
+        "name": "Profit"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Is Closed Flag",
-        "name": "Is_Closed_Flag"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "Policy Type",
-        "name": "Policy_Type"
+        "label": "Sub-Category",
+        "name": "Sub_Category"
       },
       {
         "dataType": "Text",
@@ -145,38 +155,20 @@
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Claim Process Status",
-        "name": "Claim_Process_Status"
-      },
-      {
-        "dataType": "DateTime",
-        "isPrimaryKey": false,
-        "label": "Event Date",
-        "name": "Event_Date"
-      },
-      {
-        "dataType": "Number",
-        "isPrimaryKey": false,
-        "label": "Deductible",
-        "name": "Deductible"
+        "label": "Category",
+        "name": "Category"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Claim Reason",
-        "name": "Claim_Reason"
+        "label": "Region",
+        "name": "Region"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
         "label": "cdp_sys_SourceVersion",
         "name": "cdp_sys_SourceVersion"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "KQ_Policy_Holder",
-        "name": "KQ_Policy_Holder"
       }
     ],
     "dataSpaceInfo": [
@@ -185,49 +177,42 @@
         "name": "default"
       }
     ],
-    "eventDateTimeFieldName": "Open_Date",
     "fields": [
       {
         "dataType": "Number",
         "isPrimaryKey": false,
-        "label": "Annualized Premium Amount",
-        "name": "Annualized_Premium_Amount"
+        "label": "Discount",
+        "name": "Discount"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Segment",
+        "name": "Segment"
       },
       {
         "dataType": "Number",
         "isPrimaryKey": false,
-        "label": "Claim Paid Amount",
-        "name": "Claim_Paid_Amount"
-      },
-      {
-        "dataType": "DateTime",
-        "isPrimaryKey": false,
-        "label": "Close Date",
-        "name": "Close_Date"
+        "label": "Quantity",
+        "name": "Quantity"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Claim Number",
-        "name": "Claim_Number"
+        "label": "Customer Name",
+        "name": "Customer_Name"
       },
       {
-        "dataType": "Text",
+        "dataType": "Date",
         "isPrimaryKey": false,
-        "label": "Data Source Object",
-        "name": "DataSourceObject"
+        "label": "Order Date",
+        "name": "Order_Date"
       },
       {
-        "dataType": "Text",
+        "dataType": "Number",
         "isPrimaryKey": false,
-        "label": "Claim Status",
-        "name": "Claim_Status"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "Policy Holder",
-        "name": "Policy_Holder"
+        "label": "Sales",
+        "name": "Sales"
       },
       {
         "dataType": "Text",
@@ -238,80 +223,92 @@
       {
         "dataType": "Text",
         "isPrimaryKey": false,
+        "label": "Row ID",
+        "name": "Row_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Customer ID",
+        "name": "Customer_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "KQ_Order_ID",
+        "name": "KQ_Order_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": true,
+        "label": "Order ID",
+        "name": "Order_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Ship Mode",
+        "name": "Ship_Mode"
+      },
+      {
+        "dataType": "Date",
+        "isPrimaryKey": false,
+        "label": "Ship Date",
+        "name": "Ship_Date"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "State/Province",
+        "name": "State_Province"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source Object",
+        "name": "DataSourceObject"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
         "label": "City",
         "name": "City"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Agent Group",
-        "name": "Agent_Group"
-      },
-      {
-        "dataType": "DateTime",
-        "isPrimaryKey": false,
-        "label": "Open Date",
-        "name": "Open_Date"
-      },
-      {
-        "dataType": "DateTime",
-        "isPrimaryKey": false,
-        "label": "cdp_sys_PartitionDate",
-        "name": "cdp_sys_PartitionDate"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "County",
-        "name": "County"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "KQ_Policy_Number",
-        "name": "KQ_Policy_Number"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": true,
-        "label": "Policy Number",
-        "name": "Policy_Number"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "Agent",
-        "name": "Agent"
+        "label": "Product Name",
+        "name": "Product_Name"
       },
       {
         "dataType": "Number",
         "isPrimaryKey": false,
-        "label": "Damages Amount",
-        "name": "Damages_Amount"
+        "label": "Postal Code",
+        "name": "Postal_Code"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Business Line",
-        "name": "Business_Line"
+        "label": "Product ID",
+        "name": "Product_ID"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Is Reimbursed Flag",
-        "name": "Is_Reimbursed_Flag"
+        "label": "Country/Region",
+        "name": "Country_Region"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Profit",
+        "name": "Profit"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Is Closed Flag",
-        "name": "Is_Closed_Flag"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "Policy Type",
-        "name": "Policy_Type"
+        "label": "Sub-Category",
+        "name": "Sub_Category"
       },
       {
         "dataType": "Text",
@@ -322,53 +319,131 @@
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Claim Process Status",
-        "name": "Claim_Process_Status"
-      },
-      {
-        "dataType": "DateTime",
-        "isPrimaryKey": false,
-        "label": "Event Date",
-        "name": "Event_Date"
-      },
-      {
-        "dataType": "Number",
-        "isPrimaryKey": false,
-        "label": "Deductible",
-        "name": "Deductible"
+        "label": "Category",
+        "name": "Category"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
-        "label": "Claim Reason",
-        "name": "Claim_Reason"
+        "label": "Region",
+        "name": "Region"
       },
       {
         "dataType": "Text",
         "isPrimaryKey": false,
         "label": "cdp_sys_SourceVersion",
         "name": "cdp_sys_SourceVersion"
-      },
-      {
-        "dataType": "Text",
-        "isPrimaryKey": false,
-        "label": "KQ_Policy_Holder",
-        "name": "KQ_Policy_Holder"
       }
     ],
-    "id": "0gOHo000000PFZSMA4",
-    "label": "Insurance_Claims_Dataverse_1745859943423",
-    "name": "Insurance_Claims_Dataverse_1745859943423__dll",
+    "id": "0gOHo000000PHciMAG",
+    "label": "Sample - Superstore - Orders.csv",
+    "name": "Sample_Superstore_Orderscsv__dll",
     "status": "ACTIVE"
   },
-  "dataSource": "HerokuPostgres_Dataverse",
+  "dataSource": "UploadedFiles",
   "dataStreamType": "CONNECTORSFRAMEWORK",
   "isEnabled": true,
-  "label": "Insurance_Claims_Dataverse_1745859943423",
+  "label": "Sample - Superstore - Orders.csv",
   "lastRunStatus": "NONE",
-  "mappings": [],
-  "name": "Insurance_Claims_Dataverse_1745859943423",
-  "recordId": "1dsHo000000GsS1IAK",
+  "mappings": [
+    {
+      "sourceFieldName": "Order Date",
+      "targetFieldName": "Order_Date"
+    },
+    {
+      "sourceFieldName": "Order ID",
+      "targetFieldName": "Order_ID"
+    },
+    {
+      "sourceFieldName": "Quantity",
+      "targetFieldName": "Quantity"
+    },
+    {
+      "sourceFieldName": "Row ID",
+      "targetFieldName": "Row_ID"
+    },
+    {
+      "sourceFieldName": "Category",
+      "targetFieldName": "Category"
+    },
+    {
+      "sourceFieldName": "Country/Region",
+      "targetFieldName": "Country_Region"
+    },
+    {
+      "formula": "&#39;Sample - Superstore - Orders.csv&#39;",
+      "targetFieldName": "DataSourceObject"
+    },
+    {
+      "targetFieldName": "InternalOrganization"
+    },
+    {
+      "formula": "UploadedFiles",
+      "targetFieldName": "DataSource"
+    },
+    {
+      "sourceFieldName": "Product Name",
+      "targetFieldName": "Product_Name"
+    },
+    {
+      "sourceFieldName": "Profit",
+      "targetFieldName": "Profit"
+    },
+    {
+      "sourceFieldName": "Ship Date",
+      "targetFieldName": "Ship_Date"
+    },
+    {
+      "sourceFieldName": "Customer ID",
+      "targetFieldName": "Customer_ID"
+    },
+    {
+      "sourceFieldName": "Region",
+      "targetFieldName": "Region"
+    },
+    {
+      "sourceFieldName": "Customer Name",
+      "targetFieldName": "Customer_Name"
+    },
+    {
+      "sourceFieldName": "City",
+      "targetFieldName": "City"
+    },
+    {
+      "sourceFieldName": "Discount",
+      "targetFieldName": "Discount"
+    },
+    {
+      "sourceFieldName": "State/Province",
+      "targetFieldName": "State_Province"
+    },
+    {
+      "sourceFieldName": "Sales",
+      "targetFieldName": "Sales"
+    },
+    {
+      "sourceFieldName": "Sub-Category",
+      "targetFieldName": "Sub_Category"
+    },
+    {
+      "sourceFieldName": "Segment",
+      "targetFieldName": "Segment"
+    },
+    {
+      "sourceFieldName": "Ship Mode",
+      "targetFieldName": "Ship_Mode"
+    },
+    {
+      "sourceFieldName": "Postal Code",
+      "targetFieldName": "Postal_Code"
+    },
+    {
+      "sourceFieldName": "Product ID",
+      "targetFieldName": "Product_ID"
+    }
+  ],
+  "name": "Sample_Superstore_Orderscsv",
+  "recordId": "1dsHo000000GyUVIA0",
   "refreshConfig": {
     "frequency": {
       "hours": [],
@@ -383,19 +458,41 @@
   "sourceFields": [
     {
       "datatype": "Text",
-      "name": "Agent"
+      "name": "Row ID"
     },
     {
       "datatype": "Text",
-      "name": "Policy Type"
+      "name": "Order ID"
     },
     {
-      "datatype": "Number",
-      "name": "Annualized Premium Amount"
+      "datatype": "Date",
+      "format": "MM/dd/yyyy",
+      "name": "Order Date"
+    },
+    {
+      "datatype": "Date",
+      "format": "MM/dd/yyyy",
+      "name": "Ship Date"
     },
     {
       "datatype": "Text",
-      "name": "Business Line"
+      "name": "Ship Mode"
+    },
+    {
+      "datatype": "Text",
+      "name": "Customer ID"
+    },
+    {
+      "datatype": "Text",
+      "name": "Customer Name"
+    },
+    {
+      "datatype": "Text",
+      "name": "Segment"
+    },
+    {
+      "datatype": "Text",
+      "name": "Country/Region"
     },
     {
       "datatype": "Text",
@@ -403,70 +500,47 @@
     },
     {
       "datatype": "Text",
-      "name": "Claim Number"
+      "name": "State/Province"
     },
     {
       "datatype": "Number",
-      "name": "Claim Paid Amount"
+      "name": "Postal Code"
     },
     {
       "datatype": "Text",
-      "name": "Claim Process Status"
+      "name": "Region"
     },
     {
       "datatype": "Text",
-      "name": "Claim Reason"
+      "name": "Product ID"
     },
     {
       "datatype": "Text",
-      "name": "Claim Status"
-    },
-    {
-      "datatype": "DateTime",
-      "format": "MM/dd/yyyy HH:mm:ss.SSS",
-      "name": "Close Date"
+      "name": "Category"
     },
     {
       "datatype": "Text",
-      "name": "County"
+      "name": "Sub-Category"
+    },
+    {
+      "datatype": "Text",
+      "name": "Product Name"
     },
     {
       "datatype": "Number",
-      "name": "Damages Amount"
+      "name": "Sales"
     },
     {
       "datatype": "Number",
-      "name": "Deductible"
+      "name": "Quantity"
     },
     {
-      "datatype": "DateTime",
-      "format": "MM/dd/yyyy HH:mm:ss.SSS",
-      "name": "Event Date"
+      "datatype": "Number",
+      "name": "Discount"
     },
     {
-      "datatype": "Text",
-      "name": "Is Closed Flag"
-    },
-    {
-      "datatype": "Text",
-      "name": "Is Reimbursed Flag"
-    },
-    {
-      "datatype": "DateTime",
-      "format": "MM/dd/yyyy HH:mm:ss.SSS",
-      "name": "Open Date"
-    },
-    {
-      "datatype": "Text",
-      "name": "Policy Holder"
-    },
-    {
-      "datatype": "Text",
-      "name": "Policy Number"
-    },
-    {
-      "datatype": "Text",
-      "name": "Agent Group"
+      "datatype": "Number",
+      "name": "Profit"
     }
   ],
   "status": "ACTIVE"

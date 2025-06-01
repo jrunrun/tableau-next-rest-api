@@ -1,0 +1,59 @@
+Example payload for createDataStream:
+
+body = """{
+  "dataLakeObjectInfo": [
+    {}
+  ],
+  "name": "",
+  "datastreamType": "",
+  "datasource": "",
+  "sourceFields": [
+    {}
+  ],
+  "connectorInfo": {},
+  "refreshConfig": {},
+  "label": "",
+  "mappings": [
+    {}
+  ]
+}"
+
+
+curl --location 'https://your-sf-domain.my.salesforce.com/services/data/v61.0/ssot/data-streams' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+  "connectorInfo": {
+    "connectorDetails": {
+      "name": "SalesforceDotCom_MyOrg", # the API name of your CRM connection
+      "sourceObject": "Account" # the API name of the object to ingest
+    },
+    "connectorType": "SalesforceDotCom"
+  },
+  "dataLakeObjectInfo": {
+    "category": "Profile",  # set value accordingly
+    "dataspaceInfo": [
+      { "name": "default" }
+    ],
+    "label": "Account_C1stSandbox"  # the label for the target DLO
+  },
+  "name": "Account_C1stSandbox",  # the API name for the data stream
+  "label": "Account_C1stSandbox", # the label for the data stream
+  "datastreamType": "SFDC",
+  "refreshConfig": {
+      "frequency": {
+           "frequencyType": "BATCH"
+      }  
+  },
+  "datasource": "Salesforce_C1stSandbox", # set value accordingly
+  "sourceFields": [
+    { "name": "SampleTextField__c", "dataType": "Text"},
+    { "name": "SampleBooleanField__c", "dataType": "Boolean"},
+    { "name": "SampleDateField__c", "dataType": "Date", "format":"yyyy-MM-dd"},
+    { "name": "SampleDatetimeField__c", "dataType": "DateTime", "format":"yyyy-MM-dd'\''T'\''HH:mm:ss.SSS'\''Z'\''"},
+    { "name": "SampleNumberField__c", "dataType": "Number"},
+    { "name": "SamplePhoneField__c", "dataType": "Phone"},
+    { "name": "SampleEmailField__c", "dataType": "Email"},
+    { "name": "SampleUrlField__c", "dataType": "URL"}
+  ]
+}'

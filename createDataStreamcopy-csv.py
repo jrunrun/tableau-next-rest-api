@@ -1,164 +1,196 @@
-{
-  "advancedAttributes": {
-    "importDirectory": "005Ho00000KbiO7IAJ/2025-05-31T19:35:28.128Z",
-    "fileName": "Sample - Superstore - Orders.csv",
-    "delimiter": ",",
-    "parentDirectory": "s3://aws-prod1-useast1-cdp3-lakehouse-1/sfdrive/a360-prod-1aa1970a05b744ef86be2f5c8fb49a5d/flup-fileUploads/dc_file_upload",
-    "fileType": "CSV"
-  },
-  "connectorInfo": {
-    "connectorDetails": {
-      "name": "UploadedFiles"
+import requests
+import json
+
+# createDataStream
+# POST
+# https://{dne_cdpInstanceUrl}/services/data/v64.0/ssot/data-streams
+# Create a data stream.
+
+# Available Version: 60.0
+
+
+def get_auth_token(org, client_id, client_secret):
+    url = f"https://{org}/services/oauth2/token"
+
+    data = {
+        'grant_type': 'client_credentials',
+        'client_id': client_id,
+        'client_secret': client_secret
+    }
+
+    req = requests.post(url, data=data)
+    return req.json()['access_token']
+
+
+
+
+def create_data_stream(org, auth_token, version):
+    url = f'https://{org}/services/data/{version}/ssot/data-streams'
+
+    print(f"URL for creating data stream: {url}")
+
+
+    payload = {
+    "advancedAttributes": {
+        "importDirectory": "005Ho00000KbiO7IAJ/2025-05-31T19:35:28.128Z",
+        "fileName": "Sample - Superstore - Orders.csv",
+        "delimiter": ",",
+        "parentDirectory": "s3://aws-prod1-useast1-cdp3-lakehouse-1/sfdrive/a360-prod-1aa1970a05b744ef86be2f5c8fb49a5d/flup-fileUploads/dc_file_upload",
+        "fileType": "CSV"
     },
-    "connectorType": "DataConnector"
-  },
-  "dataLakeObjectInfo": {
-    "category": "Profile",
-    "dataspaceInfo": [
-      {
-        "name": "default"
-      }
-    ],
-    "label": "Sample - Superstore - Orders.csv",
-    "name": "Sample_Superstore_Orderscsv_20250531__dll",
-    "fields": [
+    "connectorInfo": {
+        "connectorDetails": {
+            "name": "UploadedFiles"
+        },
+        "connectorType": "DataConnector"
+    },
+    "dataLakeObjectInfo": {
+        "category": "Profile",
+        "dataspaceInfo": [
+            {
+                "name": "default"
+            }
+        ],
+        "label": "Sample - Superstore - Orders.csv",
+        "name": "Sample_Superstore_Orderscsv_20250531__dll",
+        "fields": [
       {
         "dataType": "Number",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Discount",
         "name": "Discount"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Segment",
         "name": "Segment"
       },
       {
         "dataType": "Number",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Quantity",
         "name": "Quantity"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Customer Name",
         "name": "Customer_Name"
       },
       {
         "dataType": "Date",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Order Date",
         "name": "Order_Date"
       },
       {
         "dataType": "Number",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Sales",
         "name": "Sales"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Row ID",
         "name": "Row_ID"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Customer ID",
         "name": "Customer_ID"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": true,
+        "isPrimaryKey": True,
         "label": "Order ID",
         "name": "Order_ID"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Ship Mode",
         "name": "Ship_Mode"
       },
       {
         "dataType": "Date",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Ship Date",
         "name": "Ship_Date"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "State/Province",
         "name": "State_Province"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "City",
         "name": "City"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Product Name",
         "name": "Product_Name"
       },
       {
         "dataType": "Number",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Postal Code",
         "name": "Postal_Code"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Product ID",
         "name": "Product_ID"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Country/Region",
         "name": "Country_Region"
       },
       {
         "dataType": "Number",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Profit",
         "name": "Profit"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Sub-Category",
         "name": "Sub_Category"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Category",
         "name": "Category"
       },
       {
         "dataType": "Text",
-        "isPrimaryKey": false,
+        "isPrimaryKey": False,
         "label": "Region",
         "name": "Region"
       }
     ]
-  },
-  "name": "Sample_Superstore_Orderscsv_testing",
-  "datastreamType": "CONNECTORSFRAMEWORK",
-  "refreshConfig": {
-    "frequency": {
-      "frequencyType": "None"
     },
-    "refreshMode": "TOTAL_REPLACE"
-  },
-  "mappings": [
+    "name": "Sample_Superstore_Orderscsv_testing",
+    "datastreamType": "CONNECTORSFRAMEWORK",
+    "refreshConfig": {
+        "frequency": {
+            "frequencyType": "None"
+        },
+        "refreshMode": "TOTAL_REPLACE"
+    },
+    "mappings": [
     {
       "sourceFieldLabel": "Order Date",
       "targetFieldName": "Order_Date"
@@ -333,3 +365,58 @@
     }
   ]
 }
+
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {auth_token}'
+    }
+
+    with open('./sample-requests/createDataStream-request.json', 'w') as f:
+        json.dump(payload, f, indent=2)
+
+    print("Request has been saved to createDataStream-request.json")    
+
+    # Make POST request to create data stream
+    req = requests.post(url, headers=headers, json=payload)
+
+    print(f"Status Code: {req.status_code}")
+    print("\nHeaders:")
+    print(json.dumps(dict(req.headers), indent=2))
+    print("\nResponse Body:")
+
+    if req.status_code == 200:
+        print(json.dumps(req.json(), indent=2))
+        return req.json()
+    else:
+        print(f"Error: {req.text}")
+        return None
+
+
+# Configuration
+org = 'storm-dc631f52cc1aeb.my.salesforce.com'
+client_id = '3MVG9Rr0EZ2YOVMb5hDLho4ts6.27uw4kvfO9UkOFoRBAsqB96g5uInaQxhNLDziFmAQ37cSShk6oP1AlKIAc'
+client_secret = 'CCB1D74A53C328EA748FBF5F4BB2AE4CE50107582B1CDEFE049BF8F1C3576444'
+version = 'v63.0'
+source_stream_id = 'Insurance_Claims_Dataverse_1745859943423__dll'
+destination_stream_name = 'Insurance_Claims_Dataverse_Clone'
+destination_stream_api_name = 'Insurance_Claims_Dataverse_Clone'
+
+# Get auth token    
+auth_token = get_auth_token(org, client_id, client_secret)
+
+# Get existing data stream
+# stream_data = get_data_stream(org, auth_token, version, source_stream_id)
+
+
+
+
+# Create new data stream
+# if stream_data:
+#     print(f"Creating new data stream: {destination_stream_name}")
+#     new_stream = create_data_stream(org, auth_token, version, stream_data, destination_stream_name)
+
+new_stream = create_data_stream(org, auth_token, version)
+
+
+
+

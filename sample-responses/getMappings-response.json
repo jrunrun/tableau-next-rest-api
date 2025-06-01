@@ -1,0 +1,137 @@
+{
+  "objectSourceTargetMaps": [
+    {
+      "developerName": "Sample_Superstore_Orderscsv_map_Sample_Superstore_Orderscsv_1748721289694",
+      "fieldMappings": [
+        {
+          "developerName": "Sub_Category__c_fieldmap_Sub_Category__c",
+          "sourceFieldDeveloperName": "Sub_Category__c",
+          "targetFieldDeveloperName": "Sub_Category__c"
+        },
+        {
+          "developerName": "Ship_Mode__c_fieldmap_Ship_Mode__c",
+          "sourceFieldDeveloperName": "Ship_Mode__c",
+          "targetFieldDeveloperName": "Ship_Mode__c"
+        },
+        {
+          "developerName": "Order_Date__c_fieldmap_Order_Date__c",
+          "sourceFieldDeveloperName": "Order_Date__c",
+          "targetFieldDeveloperName": "Order_Date__c"
+        },
+        {
+          "developerName": "Postal_Code__c_fieldmap_Postal_Code__c",
+          "sourceFieldDeveloperName": "Postal_Code__c",
+          "targetFieldDeveloperName": "Postal_Code__c"
+        },
+        {
+          "developerName": "Product_Name__c_fieldmap_Product_Name__c",
+          "sourceFieldDeveloperName": "Product_Name__c",
+          "targetFieldDeveloperName": "Product_Name__c"
+        },
+        {
+          "developerName": "Customer_Name__c_fieldmap_Customer_Name__c",
+          "sourceFieldDeveloperName": "Customer_Name__c",
+          "targetFieldDeveloperName": "Customer_Name__c"
+        },
+        {
+          "developerName": "Product_ID__c_fieldmap_Product_ID__c",
+          "sourceFieldDeveloperName": "Product_ID__c",
+          "targetFieldDeveloperName": "Product_ID__c"
+        },
+        {
+          "developerName": "InternalOrganization__c_fieldmap_InternalOrganization__c",
+          "sourceFieldDeveloperName": "InternalOrganization__c",
+          "targetFieldDeveloperName": "InternalOrganization__c"
+        },
+        {
+          "developerName": "Quantity__c_fieldmap_Quantity__c",
+          "sourceFieldDeveloperName": "Quantity__c",
+          "targetFieldDeveloperName": "Quantity__c"
+        },
+        {
+          "developerName": "Region__c_fieldmap_Region__c",
+          "sourceFieldDeveloperName": "Region__c",
+          "targetFieldDeveloperName": "Region__c"
+        },
+        {
+          "developerName": "City__c_fieldmap_City__c",
+          "sourceFieldDeveloperName": "City__c",
+          "targetFieldDeveloperName": "City__c"
+        },
+        {
+          "developerName": "State_Province__c_fieldmap_State_Province__c",
+          "sourceFieldDeveloperName": "State_Province__c",
+          "targetFieldDeveloperName": "State_Province__c"
+        },
+        {
+          "developerName": "Customer_ID__c_fieldmap_Customer_ID__c",
+          "sourceFieldDeveloperName": "Customer_ID__c",
+          "targetFieldDeveloperName": "Customer_ID__c"
+        },
+        {
+          "developerName": "Discount__c_fieldmap_Discount__c",
+          "sourceFieldDeveloperName": "Discount__c",
+          "targetFieldDeveloperName": "Discount__c"
+        },
+        {
+          "developerName": "Ship_Date__c_fieldmap_Ship_Date__c",
+          "sourceFieldDeveloperName": "Ship_Date__c",
+          "targetFieldDeveloperName": "Ship_Date__c"
+        },
+        {
+          "developerName": "DataSource__c_fieldmap_DataSource__c",
+          "sourceFieldDeveloperName": "DataSource__c",
+          "targetFieldDeveloperName": "DataSource__c"
+        },
+        {
+          "developerName": "Order_ID__c_fieldmap_Order_ID__c",
+          "sourceFieldDeveloperName": "Order_ID__c",
+          "targetFieldDeveloperName": "Order_ID__c"
+        },
+        {
+          "developerName": "KQ_Order_ID__c_fieldmap_KQ_Order_ID__c",
+          "sourceFieldDeveloperName": "KQ_Order_ID__c",
+          "targetFieldDeveloperName": "KQ_Order_ID__c"
+        },
+        {
+          "developerName": "Category__c_fieldmap_Category__c",
+          "sourceFieldDeveloperName": "Category__c",
+          "targetFieldDeveloperName": "Category__c"
+        },
+        {
+          "developerName": "Profit__c_fieldmap_Profit__c",
+          "sourceFieldDeveloperName": "Profit__c",
+          "targetFieldDeveloperName": "Profit__c"
+        },
+        {
+          "developerName": "Row_ID__c_fieldmap_Row_ID__c",
+          "sourceFieldDeveloperName": "Row_ID__c",
+          "targetFieldDeveloperName": "Row_ID__c"
+        },
+        {
+          "developerName": "Sales__c_fieldmap_Sales__c",
+          "sourceFieldDeveloperName": "Sales__c",
+          "targetFieldDeveloperName": "Sales__c"
+        },
+        {
+          "developerName": "DataSourceObject__c_fieldmap_DataSourceObject__c",
+          "sourceFieldDeveloperName": "DataSourceObject__c",
+          "targetFieldDeveloperName": "DataSourceObject__c"
+        },
+        {
+          "developerName": "Country_Region__c_fieldmap_Country_Region__c",
+          "sourceFieldDeveloperName": "Country_Region__c",
+          "targetFieldDeveloperName": "Country_Region__c"
+        },
+        {
+          "developerName": "Segment__c_fieldmap_Segment__c",
+          "sourceFieldDeveloperName": "Segment__c",
+          "targetFieldDeveloperName": "Segment__c"
+        }
+      ],
+      "sourceEntityDeveloperName": "Sample_Superstore_Orderscsv__dll",
+      "status": "ACTIVE",
+      "targetEntityDeveloperName": "Sample_Superstore_Orderscsv__dlm"
+    }
+  ]
+}

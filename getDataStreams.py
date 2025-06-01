@@ -25,7 +25,7 @@ def get_auth_token(org, client_id, client_secret):
 
 
 def get_data_streams(org, auth_token, version):
-    url = f'https://{org}/services/data/{version}/ssot/data-streams'
+    url = f'https://{org}/services/data/{version}/ssot/data-streams' + '?limit=100'
 
     print(f"URL for getting data streams: {url}")
 
