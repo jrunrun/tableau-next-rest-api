@@ -1,0 +1,337 @@
+{
+  "dataLakeObjectInfo": {
+    "capabilities": {},
+    "category": "Profile",
+    "dataLakeFieldInfoRepresentation": [
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "City",
+        "name": "City"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Discount",
+        "name": "Discount"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Product ID",
+        "name": "Product_ID"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Sales",
+        "name": "Sales"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source",
+        "name": "DataSource"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Postal Code",
+        "name": "Postal_Code"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Row ID",
+        "name": "Row_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "State/Province",
+        "name": "State_Province"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Product Name",
+        "name": "Product_Name"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Profit",
+        "name": "Profit"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Segment",
+        "name": "Segment"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "KQ_Order_ID",
+        "name": "KQ_Order_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": true,
+        "label": "Order ID",
+        "name": "Order_ID"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Quantity",
+        "name": "Quantity"
+      },
+      {
+        "dataType": "Date",
+        "isPrimaryKey": false,
+        "label": "Order Date",
+        "name": "Order_Date"
+      },
+      {
+        "dataType": "Date",
+        "isPrimaryKey": false,
+        "label": "Ship Date",
+        "name": "Ship_Date"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Ship Mode",
+        "name": "Ship_Mode"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Internal Organization",
+        "name": "InternalOrganization"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Country/Region",
+        "name": "Country_Region"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Customer ID",
+        "name": "Customer_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source Object",
+        "name": "DataSourceObject"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Sub-Category",
+        "name": "Sub_Category"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Customer Name",
+        "name": "Customer_Name"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Region",
+        "name": "Region"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Category",
+        "name": "Category"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "cdp_sys_SourceVersion",
+        "name": "cdp_sys_SourceVersion"
+      }
+    ],
+    "dataSpaceInfo": [
+      {
+        "label": "default",
+        "name": "default"
+      }
+    ],
+    "fields": [
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "City",
+        "name": "City"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Discount",
+        "name": "Discount"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Product ID",
+        "name": "Product_ID"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Sales",
+        "name": "Sales"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source",
+        "name": "DataSource"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Postal Code",
+        "name": "Postal_Code"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Row ID",
+        "name": "Row_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "State/Province",
+        "name": "State_Province"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Product Name",
+        "name": "Product_Name"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Profit",
+        "name": "Profit"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Segment",
+        "name": "Segment"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "KQ_Order_ID",
+        "name": "KQ_Order_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": true,
+        "label": "Order ID",
+        "name": "Order_ID"
+      },
+      {
+        "dataType": "Number",
+        "isPrimaryKey": false,
+        "label": "Quantity",
+        "name": "Quantity"
+      },
+      {
+        "dataType": "Date",
+        "isPrimaryKey": false,
+        "label": "Order Date",
+        "name": "Order_Date"
+      },
+      {
+        "dataType": "Date",
+        "isPrimaryKey": false,
+        "label": "Ship Date",
+        "name": "Ship_Date"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Ship Mode",
+        "name": "Ship_Mode"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Internal Organization",
+        "name": "InternalOrganization"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Country/Region",
+        "name": "Country_Region"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Customer ID",
+        "name": "Customer_ID"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Data Source Object",
+        "name": "DataSourceObject"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Sub-Category",
+        "name": "Sub_Category"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Customer Name",
+        "name": "Customer_Name"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Region",
+        "name": "Region"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "Category",
+        "name": "Category"
+      },
+      {
+        "dataType": "Text",
+        "isPrimaryKey": false,
+        "label": "cdp_sys_SourceVersion",
+        "name": "cdp_sys_SourceVersion"
+      }
+    ],
+    "id": "0gOHo000000PIFQMA4",
+    "label": "Sample Superstore Orders Test DLO56",
+    "name": "Sample_Superstore_Orders_Test_DLO_56__dll",
+    "status": "PROCESSING"
+  },
+  "id": "1sdHo000000Gs75IAC",
+  "label": "Sample Superstore Orders Test56",
+  "name": "Sample_Superstore_Orders_Test_DLO_56",
+  "recordId": "1dsHo000000H0A4",
+  "status": "PROCESSING"
+}

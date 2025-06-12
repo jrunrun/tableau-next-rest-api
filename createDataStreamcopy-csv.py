@@ -1,5 +1,7 @@
 import requests
 import json
+from datetime import datetime
+import time
 
 # createDataStream
 # POST
@@ -24,7 +26,7 @@ def get_auth_token(org, client_id, client_secret):
 
 
 
-def create_data_stream(org, auth_token, version):
+def create_data_stream(org, auth_token, version, DLO_label, DLO_name, data_stream_name):
     url = f'https://{org}/services/data/{version}/ssot/data-streams'
 
     print(f"URL for creating data stream: {url}")
@@ -367,6 +369,12 @@ def create_data_stream(org, auth_token, version):
   ]
 }
 
+    payload['dataLakeObjectInfo']['label'] = DLO_label
+    payload['dataLakeObjectInfo']['name'] = DLO_name
+
+    payload['name'] = data_stream_name
+    payload['label'] = data_stream_name
+
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'Bearer {auth_token}'
@@ -381,17 +389,41 @@ def create_data_stream(org, auth_token, version):
     req = requests.post(url, headers=headers, json=payload)
 
     print(f"Status Code: {req.status_code}")
-    print("\nHeaders:")
-    print(json.dumps(dict(req.headers), indent=2))
-    print("\nResponse Body:")
 
-    if req.status_code == 201:
-        print("\nResponse Body:")
+    if req.status_code in [200, 201]:
+        print("\nResponse Body:") 
         print(json.dumps(req.json(), indent=2))
+        with open('./sample-responses/createDataStream-csv-response.json', 'w') as f:
+            json.dump(req.json(), f, indent=2)
+        print("Response has been saved to createDataStream-csv-response.json")
         return req.json()
     else:
         print(f"Error: {req.text}")
         return None
+
+
+def run_data_stream(org, auth_token, version, record_id):
+  url = f'https://{org}/services/data/{version}/ssot/data-streams/{record_id}/actions/run'
+
+  headers = {
+    'Content-Type': 'application/json',
+    'Authorization': f'Bearer {auth_token}'
+  }
+
+  req = requests.post(url, headers=headers)
+
+  print(f"Status Code: {req.status_code}")
+  print("\nHeaders:")
+  print(json.dumps(dict(req.headers), indent=2))
+  print("\nResponse Body:")
+  
+  if req.status_code == 200:
+    print(f"Datastream run triggered successfully: {req.json()}")
+    return True
+  else:
+    print(f"Error: {req.text}")
+    return False
+
 
 
 # Configuration
@@ -399,9 +431,16 @@ org = 'storm-dc631f52cc1aeb.my.salesforce.com'
 client_id = '3MVG9Rr0EZ2YOVMb5hDLho4ts6.27uw4kvfO9UkOFoRBAsqB96g5uInaQxhNLDziFmAQ37cSShk6oP1AlKIAc'
 client_secret = 'CCB1D74A53C328EA748FBF5F4BB2AE4CE50107582B1CDEFE049BF8F1C3576444'
 version = 'v63.0'
-source_stream_id = 'Insurance_Claims_Dataverse_1745859943423__dll'
-destination_stream_name = 'Insurance_Claims_Dataverse_Clone'
-destination_stream_api_name = 'Insurance_Claims_Dataverse_Clone'
+# source_stream_id = 'Insurance_Claims_Dataverse_1745859943423__dll'
+unique_id = '56'
+data_stream_name = 'Sample Superstore Orders Test' + unique_id
+# "name": "Sample Superstore Orders Test",
+# "label": "Sample Superstore Orders Test",
+
+DLO_label = 'Sample Superstore Orders Test DLO' + unique_id
+DLO_name = 'Sample_Superstore_Orders_Test_DLO' + '_' + unique_id + '__dll'
+# "label": "Sample Superstore Orders",
+# "name": "Sample_Superstore_Orders__dll",
 
 # Get auth token    
 auth_token = get_auth_token(org, client_id, client_secret)
@@ -417,8 +456,13 @@ auth_token = get_auth_token(org, client_id, client_secret)
 #     print(f"Creating new data stream: {destination_stream_name}")
 #     new_stream = create_data_stream(org, auth_token, version, stream_data, destination_stream_name)
 
-new_stream = create_data_stream(org, auth_token, version)
+new_stream = create_data_stream(org, auth_token, version, DLO_label, DLO_name, data_stream_name)
 
-
-
-
+if new_stream:
+    recordId = new_stream['recordId']
+    print(f"Record ID: {recordId}")
+    print("Waiting 10 seconds before running the data stream...")
+    time.sleep(10)  # Wait for 10 seconds
+    run_data_stream(org, auth_token, version, recordId)
+else:
+    print("Failed to create data stream. Please check the error messages above.")

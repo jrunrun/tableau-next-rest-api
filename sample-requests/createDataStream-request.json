@@ -19,9 +19,9 @@
         "name": "default"
       }
     ],
-    "label": "Sample - Superstore - Orders.csv",
-    "name": "Sample_Superstore_Orderscsv_20250531__dll",
-    "fields": [
+    "label": "Sample Superstore Orders Test DLO56",
+    "name": "Sample_Superstore_Orders_Test_DLO_56__dll",
+    "dataLakeFieldInputRepresentations": [
       {
         "dataType": "Number",
         "isPrimaryKey": false,
@@ -150,7 +150,8 @@
       }
     ]
   },
-  "name": "Sample_Superstore_Orderscsv_testing",
+  "name": "Sample Superstore Orders Test56",
+  "label": "Sample Superstore Orders Test56",
   "datastreamType": "CONNECTORSFRAMEWORK",
   "refreshConfig": {
     "frequency": {

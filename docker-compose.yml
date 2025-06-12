@@ -3,3 +3,5 @@ services:
     build: .
     volumes:
       - .:/app 
+
+    cpus: 1.0  

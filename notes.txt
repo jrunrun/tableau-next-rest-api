@@ -1,0 +1,55 @@
+
+
+
+
+
+Requirements for Viz Clone App:
+The app runs the following steps:
+1. The user inputs credentials for the source and destination orgs
+2. The user clicks test connection button to confirm credentials are valid
+3. The user clicks get dataspaces button
+4. The user selects the dataspace from a list of dataspaces
+5. The user clicks get all vizzes for selected dataspace button
+6. The app gets all vizzes from the source org and displays them in a list
+7. The user selects one or more vizzes from the list
+8. The app gets all of the data assets associated with the selected vizzes
+9. The user clicks the clone button
+10. The app clones all of the data assets (Datasource, DataStream, DLO, DMO, SemanticModel) associated with the selected vizzes
+11. The app clones the vizzes
+12. The app displays notification that the clone is complete
+
+
+
+
+
+
+
+Detailed Steps:
+1. Get all Viz
+2. User selects Viz (allow user to select multiple Viz)
+3. Get semantic model associated with the Viz
+4. Get the semantic data object collection for the semantic model (DMO; e.g. Retail_NTO_Dataverse__dlm)
+5. Get the semantic data object for each DMO in the collection
+6. Get all data streams
+7. Filter the data stream that match the semantic data object (DLO)
+8. 
+
+
+Assumptions:
+1. The Viz response includes the semantic model name
+2. The semantic model data object collection response includes the data object name (DMO)
+3. The getDataStreams response includes the DLO info (e.g. Retail_NTO_Dataverse_17338_1745859943368)
+
+
+
+Facts:
+The semantic data object collection (DMO) response include DLO info (e.g. Retail_NTO_Dataverse)
+The semantic model response include DMO
+The data streams response include DLO info (e.g. Retail_NTO_Dataverse_17338_1745859943368)
+The DLO should include the data stream name
+The DMO should include both the DLO and data stream name
+The semantic model is associated with a semantic data object collection (DMO)
+The DMO is associated with a DLO (e.g. Retail_NTO_Dataverse_17338_1745859943368) and a data stream (e.g. Retail_NTO_Dataverse_17338_1745859943368)
+The DLO is associated with a data stream (e.g. Retail_NTO_Dataverse_17338_1745859943368)
+The data stream is associated with a DLO (e.g. Retail_NTO_Dataverse_17338_1745859943368) and includes data source information
+
