@@ -51,9 +51,9 @@ def create_data_stream(org, auth_token, version):
                 "name": "default"
             }
         ],
-        "label": "Sample - Superstore - Orders.csv",
-        "name": "Sample_Superstore_Orderscsv_20250531__dll",
-        "fields": [
+        "label": "Sample Superstore Orders",
+        "name": "Sample_Superstore_Orders__dll",
+        "dataLakeFieldInputRepresentations": [
       {
         "dataType": "Number",
         "isPrimaryKey": False,
@@ -182,7 +182,8 @@ def create_data_stream(org, auth_token, version):
       }
     ]
     },
-    "name": "Sample_Superstore_Orderscsv_testing",
+    "name": "Sample Superstore Orders Test",
+    "label": "Sample Superstore Orders Test",
     "datastreamType": "CONNECTORSFRAMEWORK",
     "refreshConfig": {
         "frequency": {
@@ -384,7 +385,8 @@ def create_data_stream(org, auth_token, version):
     print(json.dumps(dict(req.headers), indent=2))
     print("\nResponse Body:")
 
-    if req.status_code == 200:
+    if req.status_code == 201:
+        print("\nResponse Body:")
         print(json.dumps(req.json(), indent=2))
         return req.json()
     else:
