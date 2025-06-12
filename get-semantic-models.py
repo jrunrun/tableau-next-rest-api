@@ -36,10 +36,10 @@ def get_semantic_models(org, auth_token):
     print("\nResponse Body:")
 
     # Save the formatted JSON response to a file
-    with open('semantic_model_response.json', 'w') as f:
+    with open('get-semantic-models-response.json', 'w') as f:
         json.dump(req.json(), f, indent=2)
 
-    print("Response has been saved to semantic_model_response.json")
+    print("Response has been saved to get-semantic-models-response.json")
 
     # Print to console
     print(json.dumps(req.json(), indent=2))

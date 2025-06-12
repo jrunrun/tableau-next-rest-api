@@ -23,10 +23,10 @@ print(json.dumps(dict(req.headers), indent=2))
 print("\nResponse Body:")
 
 # Save the formatted JSON response to a file
-with open('semantic_model_response.json', 'w') as f:
+with open('get-semantic-model-response.json', 'w') as f:
     json.dump(req.json(), f, indent=2)
 
-print("Response has been saved to semantic_model_response.json")
+print("Response has been saved to get-semantic-model-response.json")
 
 # Print to console as well
 print(json.dumps(req.json(), indent=2))
