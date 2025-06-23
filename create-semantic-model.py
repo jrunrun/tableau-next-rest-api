@@ -1,35 +1,68 @@
 import requests
 import json
+import xml.etree.ElementTree as ET
 
 
-def get_auth_token(org, client_id, client_secret):
-    url = f"https://{org}/services/oauth2/token"
+def get_session_id(
+    instance_url: str, username: str, password: str, version: str = "62.0"
+) -> str:
+    """Get a Salesforce session ID using SOAP login.
 
-    data = {
-        'grant_type': 'client_credentials',
-        'client_id': client_id,
-        'client_secret': client_secret
-    }
+    Args:
+        instance_url (str): Salesforce instance URL.
+        username (str): Salesforce username.
+        password (str): Salesforce password.
+        version (str): API version.
 
-    req = requests.post(url, data=data)
-    return req.json()['access_token']
+    Returns:
+        str: Session ID.
+    """
+    url = "https://" + instance_url + "/services/Soap/u/" + version
+    headers = {"Content-Type": "text/xml; charset=UTF-8", "SOAPAction": "login"}
+    body = """<?xml version="1.0" encoding="utf-8" ?>
+                <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+                <env:Body>
+                <n1:login xmlns:n1="urn:partner.soap.sforce.com">
+                <n1:username>USERNAME</n1:username>
+                <n1:password>PASSWORD</n1:password>
+                </n1:login>
+                </env:Body>
+                </env:Envelope>"""
+    body = body.replace("USERNAME", username)
+    body = body.replace("PASSWORD", password)
+    session_response = requests.post(url, data=body, headers=headers)
+    if session_response.status_code != 200:
+        print(f"Login Failed! for user {username} on instance {instance_url}")
+        print("Response code: ", session_response.status_code)
+        print("Res: ", session_response.text)
+        exit(1)
+    root = ET.fromstring(session_response.text)
+    session = root[0].findall(
+        "{urn:partner.soap.sforce.com}loginResponse/{urn:partner.soap.sforce.com}result/{"
+        "urn:partner.soap.sforce.com}sessionId"
+    )[0]
+    auth_id = session.text
+    print(f"Auth ID: {auth_id}")
+    return auth_id
 
 
-def get_semantic_model(org, model_api_name, auth_token):
+def get_semantic_model(org, model_api_name, session_id):
     url = f'https://{org}/services/data/v62.0/ssot/semantic/models/{model_api_name}'
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': f'Bearer {auth_token}'
+        'Authorization': f'Bearer {session_id}'
     }
 
     req = requests.get(url, headers=headers)
     return req.json()
 
-def create_semantic_model(org, model_api_name, model_data, auth_token):
+def create_semantic_model(org, model_api_name, model_data, session_id):
     url = f'https://{org}/services/data/v62.0/ssot/semantic/models'
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': f'Bearer {auth_token}'
+        'Authorization': f'Bearer {session_id}'
     }
 
     
@@ -59,23 +92,18 @@ def create_semantic_model(org, model_api_name, model_data, auth_token):
     
     return req.json()
 
-# Example authorization headers
-headers = {
-    "Authorization": "Bearer 00DHo000003yF1p!ARIAQIsY7uHB72amRNWXwU2FF2pFEP6lHSORsYNUwcuwYb9MGW7AqrXndRfvgIg6jubtZNsuvvv31c8m5Y8mafZm5dnz2j9U"
-}
-
+# Configuration
 org = 'storm-dc631f52cc1aeb.my.salesforce.com'
+username = 'jcraycraft.6890ccbb70@salesforce.com'
+password = 'orgfarm1234'
 source_model_api_name = 'Retail_NTO'
-destination_model_name = 'Retail_NTO_Clone55'
-client_id = '3MVG9Rr0EZ2YOVMb5hDLho4ts6.27uw4kvfO9UkOFoRBAsqB96g5uInaQxhNLDziFmAQ37cSShk6oP1AlKIAc'
-client_secret = 'CCB1D74A53C328EA748FBF5F4BB2AE4CE50107582B1CDEFE049BF8F1C3576444'
+destination_model_name = 'Retail_NTO_Clone5566_june_23'
 
-
-# Get auth token    
-auth_token = get_auth_token(org, client_id, client_secret)
+# Get session ID
+session_id = get_session_id(org, username, password)
 
 # Get existing model
-model_data = get_semantic_model(org, source_model_api_name, auth_token)
+model_data = get_semantic_model(org, source_model_api_name, session_id)
 
 # Create new model
-new_model = create_semantic_model(org, destination_model_name, model_data, auth_token)
+new_model = create_semantic_model(org, destination_model_name, model_data, session_id)

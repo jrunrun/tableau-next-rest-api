@@ -5,7 +5,7 @@
 
 Requirements for Viz Clone App:
 The app runs the following steps:
-1. The user inputs credentials for the source and destination orgs
+1. The user inputs credentials (username and password) for the source and destination orgs
 2. The user clicks test connection button to confirm credentials are valid
 3. The user clicks get dataspaces button
 4. The user selects the dataspace from a list of dataspaces
@@ -17,6 +17,66 @@ The app runs the following steps:
 10. The app clones all of the data assets (Datasource, DataStream, DLO, DMO, SemanticModel) associated with the selected vizzes
 11. The app clones the vizzes
 12. The app displays notification that the clone is complete
+
+
+Blockers:
+1. The ability to create data streams of type HerokuPostgres is not working. 
+2. The ability to upload csv to data cloud is not working, however the ability to creat a data stream of type CSV is working. 
+
+Next Steps:
+1. The ability to get/create a viz collection
+2. Ask John why simple-salesforce is not working for the get viz and dashboard calls
+
+
+I'm building a migration tool. It take inputs for source and destination.
+I need to parse and transform the response from getDashboard in the source org to create the payload in postDashboard to create the dashboard in destination org
+
+Example source:
+org = 'storm-dc631f52cc1aeb.my.salesforce.com'
+username = 'jcraycraft.6890ccbb70@salesforce.com'
+password = 'orgfarm1234'
+data_space = 'default'
+dashboard_api_name = '1AKHo000000GmaEOAS'
+
+Example destination:
+org = 'storm-dc631f52cc1aeb.my.salesforce.com'
+username = 'jcraycraft.6890ccbb70@salesforce.com'
+password = 'orgfarm1234'
+data_space = 'default'
+dashboard_label = 'New dashboard name'
+
+
+Payload transformation for getDash (get) --> postDash (create):
+1. For any of the objects under widgets, delete label key under the source object ([widgets][visualization_#][source][label] where # can be number starting at 1
+2. Delete permissions, createdBy, createdDate, customViews, url and id keys at root
+3. Change label value to destination_dashboard_label 
+4. Delete label for pages array
+
+
+I'm building a migration tool. It take inputs for source and destination.
+I need to parse and transform the response from getVisualization in the source org to create the payload in postVisualization to create the visualization in destination org
+
+Example source:
+org = 'storm-dc631f52cc1aeb.my.salesforce.com'
+username = 'jcraycraft.6890ccbb70@salesforce.com'
+password = 'orgfarm1234'
+data_space = 'default'
+visualization_api_name = '1AKHo000000GmaEOAS'
+
+Example destination:
+org = 'storm-dc631f52cc1aeb.my.salesforce.com'
+username = 'jcraycraft.6890ccbb70@salesforce.com'
+password = 'orgfarm1234'
+data_space = 'default'
+visualization_label = 'New visualization name june 23'
+
+
+Payload transformation for getDash (get) --> postDash (create):
+1. Delete createdBy, createdDate, lastModifiedBy, lastModifiedDate, permissions at root
+2. Delete [view][id] and [view][isOriginal] keys
+3. Delete [fields][F#][id] for all F#
+4. Delete [workspace][url]
+
 
 
 

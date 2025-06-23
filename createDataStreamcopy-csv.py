@@ -424,7 +424,42 @@ def run_data_stream(org, auth_token, version, record_id):
     print(f"Error: {req.text}")
     return False
 
+def get_data_stream(org, auth_token, version, recordIdOrDeveloperName):
+    url = f'https://{org}/services/data/{version}/ssot/data-streams/{recordIdOrDeveloperName}'
 
+    print(f"URL for getting data streams: {url}")
+
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {auth_token}'
+    }
+
+    params = {'includeMappings': 'true'}
+
+    req = requests.get(url, headers=headers, params=params)
+
+    print(f"Status Code: {req.status_code}")
+    print("\nHeaders:")
+    print(json.dumps(dict(req.headers), indent=2))
+    print("\nResponse Body:")
+
+    if req.status_code == 200:
+        # Save the formatted JSON response to a file
+        with open('./sample-responses/getDataStream-csv-response.json', 'w') as f:
+            json.dump(req.json(), f, indent=2)
+
+        print("Response has been saved to getDataStream-csv-response.json")
+
+        # Print to console
+        print(json.dumps(req.json(), indent=2))
+        return req.json()  # Return the response data
+    else:
+        print(f"Status Code: {req.status_code}")
+        print("\nHeaders:")
+        print(json.dumps(dict(req.headers), indent=2))
+        print("\nResponse Body:")
+        print(f"Error: {req.text}")
+        return None
 
 # Configuration
 org = 'storm-dc631f52cc1aeb.my.salesforce.com'
@@ -432,7 +467,7 @@ client_id = '3MVG9Rr0EZ2YOVMb5hDLho4ts6.27uw4kvfO9UkOFoRBAsqB96g5uInaQxhNLDziFmA
 client_secret = 'CCB1D74A53C328EA748FBF5F4BB2AE4CE50107582B1CDEFE049BF8F1C3576444'
 version = 'v63.0'
 # source_stream_id = 'Insurance_Claims_Dataverse_1745859943423__dll'
-unique_id = '56'
+unique_id = '65'
 data_stream_name = 'Sample Superstore Orders Test' + unique_id
 # "name": "Sample Superstore Orders Test",
 # "label": "Sample Superstore Orders Test",
@@ -458,11 +493,50 @@ auth_token = get_auth_token(org, client_id, client_secret)
 
 new_stream = create_data_stream(org, auth_token, version, DLO_label, DLO_name, data_stream_name)
 
+
+
+
 if new_stream:
-    recordId = new_stream['recordId']
-    print(f"Record ID: {recordId}")
-    print("Waiting 10 seconds before running the data stream...")
-    time.sleep(10)  # Wait for 10 seconds
-    run_data_stream(org, auth_token, version, recordId)
+    try:
+        recordId = new_stream['recordId']
+        print(f"Record ID: {recordId}")
+        print("Waiting for status to become Active before running the data stream...")
+        
+        time.sleep(10)
+        max_attempts = 30  # Maximum number of attempts (5 minutes total with 10 second delay)
+        attempts = 0
+        while attempts < max_attempts:
+            try:
+                stream_data = get_data_stream(org, auth_token, version, recordId)
+                if stream_data is None:
+                    print(f"Error: Could not retrieve data stream status for {recordId}")
+                    break
+                    
+                current_status = stream_data.get('status')
+                print(f"Current status: for datastream {recordId} is {current_status}")
+                if current_status is None:
+                    print(f"Warning: No status field found in response: {stream_data}")
+                    break
+                    
+                print(f"Current status: {current_status} (Attempt {attempts + 1}/{max_attempts})")
+                
+                if current_status == 'ACTIVE':
+                    print("Status is now Active! Proceeding to run the data stream...")
+                    success = run_data_stream(org, auth_token, version, recordId)
+                    if not success:
+                        print("Failed to run data stream")
+                    break
+                
+                attempts += 1
+                if attempts < max_attempts:
+                    print("Waiting 10 seconds before next check...")
+                    time.sleep(10)
+            except Exception as e:
+                print(f"Error while checking status: {str(e)}")
+                break
+        else:
+            print(f"Timeout reached after {max_attempts} attempts. Data stream did not become Active.")
+    except Exception as e:
+        print(f"Error processing data stream: {str(e)}")
 else:
     print("Failed to create data stream. Please check the error messages above.")

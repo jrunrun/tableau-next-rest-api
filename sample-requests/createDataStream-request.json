@@ -19,8 +19,8 @@
         "name": "default"
       }
     ],
-    "label": "Sample Superstore Orders Test DLO56",
-    "name": "Sample_Superstore_Orders_Test_DLO_56__dll",
+    "label": "Sample Superstore Orders Test DLO65",
+    "name": "Sample_Superstore_Orders_Test_DLO_65__dll",
     "dataLakeFieldInputRepresentations": [
       {
         "dataType": "Number",
@@ -150,8 +150,8 @@
       }
     ]
   },
-  "name": "Sample Superstore Orders Test56",
-  "label": "Sample Superstore Orders Test56",
+  "name": "Sample Superstore Orders Test65",
+  "label": "Sample Superstore Orders Test65",
   "datastreamType": "CONNECTORSFRAMEWORK",
   "refreshConfig": {
     "frequency": {

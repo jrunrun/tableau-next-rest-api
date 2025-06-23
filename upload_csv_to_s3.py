@@ -1,9 +1,14 @@
-import requests
-import json
-import xml.etree.ElementTree as ET
+# 1. upload csv to s3
+# 2. create data stream
+# 3. run data stream
+# 4. create dmo mapping or create semantic model
 
-# getSemanticModelCollection
-# GET http:///services/data/v62.0/ssot/semantic/models
+
+import simple_salesforce
+from simple_salesforce import Salesforce, SalesforceMalformedRequest
+import requests
+import xml.etree.ElementTree as ET
+import json
 
 
 def get_session_id(
@@ -50,41 +55,45 @@ def get_session_id(
     print(f"Auth ID: {auth_id}")
     return auth_id
 
+def generate_s3_access_credential(path: str, sf: Salesforce, org: str):
+    """Generate AWS S3 access credentials for uploading files to Amazon S3 via Salesforce Data Cloud.
 
-def get_semantic_data_object(org, session_id, modelApiNameOrId, dataObjectName):
-    url = f'https://{org}/services/data/v62.0/ssot/semantic/models/{modelApiNameOrId}/data-objects/{dataObjectName}'
+    Args:
+        path (str): The path in the drive for which to generate credentials (e.g., "$tua$").
 
-    headers = {
-        'Content-Type': 'application/json',
-        'Authorization': f'Bearer {session_id}'
-    }
+    Returns:
+        Optional[dict]: The response containing AWS credentials and location, or None if failed.
+    """
+    endpoint = "/services/data/v63.0/ssot/sf-drive/actions/generate-credential"
+    payload = {"path": path}
+    try:
+        print(f"Requesting S3 access credential for path: {path}")
+        response = sf.restful(
+            endpoint, method="POST", data=json.dumps(payload)
+        )
+        print(f"Received S3 access credential response: {response}")
+        return response
+    except SalesforceMalformedRequest as e:
+        print(
+            f"SalesforceMalformedRequest error while generating S3 credential: {e}"
+        )
+        return None
+    except Exception as e:
+        print(f"Unexpected error while generating S3 credential: {e}")
+        return None
 
-    req = requests.get(url, headers=headers)
 
-    print(f"Status Code: {req.status_code}")
-    print("\nHeaders:")
-    print(json.dumps(dict(req.headers), indent=2))
-    print("\nResponse Body:")
-
-    # Save the formatted JSON response to a file
-    with open('sample-responses/getSemanticDataObject-response.json', 'w') as f:   
-        json.dump(req.json(), f, indent=2)
-
-    print("Response has been saved to getSemanticDataObject-response.json")
-    print(json.dumps(req.json(), indent=2))
-
-# Example configuration
 org = 'storm-dc631f52cc1aeb.my.salesforce.com'
 username = 'jcraycraft.6890ccbb70@salesforce.com'
 password = 'orgfarm1234'
-modelApiNameOrId = 'New_Semantic_Model'
-dataObjectName = 'Retail_NTO_Dataverse'
+data_space = 'default'
 
+auth_token = get_session_id(org, username, password)
 
-# Get session ID
-session_id = get_session_id(org, username, password)
+sf = Salesforce(
+    session_id=auth_token, 
+    instance_url="https://" + org, 
+    version='v63.0'
+)
 
-# Get semantic data object using session ID
-get_semantic_data_object(org, session_id, modelApiNameOrId, dataObjectName)
-
-
+generate_s3_access_credential(data_space, sf, org)

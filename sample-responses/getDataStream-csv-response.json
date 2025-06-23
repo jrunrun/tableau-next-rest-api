@@ -345,66 +345,38 @@
   "dataStreamType": "CONNECTORSFRAMEWORK",
   "isEnabled": true,
   "label": "Sample Superstore Orders Test65",
-  "lastAddedRecords": 0,
-  "lastProcessedRecords": 0,
-  "lastRefreshDate": "2025-06-12T20:47:16.000Z",
-  "lastRunStatus": "IN_PROGRESS",
+  "lastRunStatus": "NONE",
   "mappings": [
-    {
-      "sourceFieldName": "Discount",
-      "targetFieldName": "Discount"
-    },
-    {
-      "formula": "&#39;Sample - Superstore - Orders.csv&#39;",
-      "targetFieldName": "DataSourceObject"
-    },
-    {
-      "sourceFieldName": "Customer Name",
-      "targetFieldName": "Customer_Name"
-    },
-    {
-      "sourceFieldName": "Sub-Category",
-      "targetFieldName": "Sub_Category"
-    },
-    {
-      "sourceFieldName": "Row ID",
-      "targetFieldName": "Row_ID"
-    },
-    {
-      "sourceFieldName": "Country/Region",
-      "targetFieldName": "Country_Region"
-    },
     {
       "formula": "UploadedFiles",
       "targetFieldName": "DataSource"
-    },
-    {
-      "sourceFieldName": "State/Province",
-      "targetFieldName": "State_Province"
-    },
-    {
-      "sourceFieldName": "Product Name",
-      "targetFieldName": "Product_Name"
-    },
-    {
-      "sourceFieldName": "Category",
-      "targetFieldName": "Category"
-    },
-    {
-      "sourceFieldName": "Quantity",
-      "targetFieldName": "Quantity"
-    },
-    {
-      "sourceFieldName": "Segment",
-      "targetFieldName": "Segment"
     },
     {
       "sourceFieldName": "Customer ID",
       "targetFieldName": "Customer_ID"
     },
     {
-      "sourceFieldName": "Order Date",
-      "targetFieldName": "Order_Date"
+      "targetFieldName": "InternalOrganization"
+    },
+    {
+      "sourceFieldName": "Product ID",
+      "targetFieldName": "Product_ID"
+    },
+    {
+      "sourceFieldName": "Product Name",
+      "targetFieldName": "Product_Name"
+    },
+    {
+      "sourceFieldName": "Sales",
+      "targetFieldName": "Sales"
+    },
+    {
+      "sourceFieldName": "Row ID",
+      "targetFieldName": "Row_ID"
+    },
+    {
+      "sourceFieldName": "Region",
+      "targetFieldName": "Region"
     },
     {
       "sourceFieldName": "Order ID",
@@ -419,6 +391,34 @@
       "targetFieldName": "Ship_Mode"
     },
     {
+      "sourceFieldName": "Profit",
+      "targetFieldName": "Profit"
+    },
+    {
+      "sourceFieldName": "State/Province",
+      "targetFieldName": "State_Province"
+    },
+    {
+      "sourceFieldName": "Sub-Category",
+      "targetFieldName": "Sub_Category"
+    },
+    {
+      "sourceFieldName": "Category",
+      "targetFieldName": "Category"
+    },
+    {
+      "formula": "&#39;Sample - Superstore - Orders.csv&#39;",
+      "targetFieldName": "DataSourceObject"
+    },
+    {
+      "sourceFieldName": "Segment",
+      "targetFieldName": "Segment"
+    },
+    {
+      "sourceFieldName": "Order Date",
+      "targetFieldName": "Order_Date"
+    },
+    {
       "sourceFieldName": "Ship Date",
       "targetFieldName": "Ship_Date"
     },
@@ -427,23 +427,20 @@
       "targetFieldName": "City"
     },
     {
-      "sourceFieldName": "Product ID",
-      "targetFieldName": "Product_ID"
+      "sourceFieldName": "Customer Name",
+      "targetFieldName": "Customer_Name"
     },
     {
-      "sourceFieldName": "Sales",
-      "targetFieldName": "Sales"
+      "sourceFieldName": "Discount",
+      "targetFieldName": "Discount"
     },
     {
-      "sourceFieldName": "Profit",
-      "targetFieldName": "Profit"
+      "sourceFieldName": "Country/Region",
+      "targetFieldName": "Country_Region"
     },
     {
-      "sourceFieldName": "Region",
-      "targetFieldName": "Region"
-    },
-    {
-      "targetFieldName": "InternalOrganization"
+      "sourceFieldName": "Quantity",
+      "targetFieldName": "Quantity"
     }
   ],
   "name": "Sample_Superstore_Orders_Test_DLO_65",
@@ -547,6 +544,5 @@
       "name": "Profit"
     }
   ],
-  "status": "ACTIVE",
-  "totalRecords": 0
+  "status": "ACTIVE"
 }

@@ -1,0 +1,205 @@
+{
+  "id": "",
+  "label": "Copy of Sales by State",
+  "name": "Sales_by_State",
+  "dataSource": {
+    "id": "2SMHo0000008OIFOA2",
+    "label": "NTO_External",
+    "name": "New_Semantic_Model",
+    "type": "SemanticModel"
+  },
+  "workspace": {
+    "id": "1DyHo0000000006KAA",
+    "label": "TabEmbed",
+    "name": "TabEmbed"
+  },
+  "visualSpecification": {
+    "columns": [
+      "F2"
+    ],
+    "forecasts": {},
+    "legends": {
+      "F4": {
+        "isVisible": false,
+        "position": "Right",
+        "title": {
+          "isVisible": true,
+          "titleText": "SUM(Gross Margin)"
+        }
+      }
+    },
+    "marks": {
+      "ALL": {
+        "encodings": [
+          {
+            "fieldKey": "F4",
+            "type": "Color"
+          }
+        ],
+        "isAutomatic": false,
+        "stack": {
+          "isAutomatic": true,
+          "isStacked": true
+        },
+        "type": "Bar"
+      }
+    },
+    "measureValues": [],
+    "referenceLines": {},
+    "rows": [
+      "F1"
+    ],
+    "style": {
+      "axis": {
+        "F2": {
+          "isVisible": true,
+          "range": {
+            "includeZero": true,
+            "type": "Auto"
+          },
+          "scale": {
+            "format": {
+              "numberFormatInfo": {
+                "decimalPlaces": 2,
+                "displayUnits": "Auto",
+                "includeThousandSeparator": true,
+                "negativeValuesFormat": "Auto",
+                "prefix": "",
+                "suffix": "",
+                "type": "NumberShort"
+              }
+            }
+          },
+          "ticks": {
+            "majorTicks": {
+              "type": "Auto"
+            },
+            "minorTicks": {
+              "type": "Auto"
+            }
+          },
+          "titleText": "Sales"
+        }
+      },
+      "fieldLabels": {
+        "columns": {
+          "showLabels": true
+        },
+        "rows": {
+          "showLabels": true
+        }
+      },
+      "fit": "Standard",
+      "headers": {
+        "F1": {
+          "hiddenValues": [],
+          "isVisible": true,
+          "showMissingValues": false
+        }
+      },
+      "marks": {
+        "ALL": {
+          "color": {
+            "color": ""
+          },
+          "label": {
+            "canOverlapLabels": false,
+            "marksToLabel": {
+              "type": "All"
+            },
+            "showMarkLabels": false
+          }
+        }
+      },
+      "panes": {
+        "F2": {
+          "defaults": {
+            "format": {
+              "numberFormatInfo": {
+                "decimalPlaces": 2,
+                "displayUnits": "Auto",
+                "includeThousandSeparator": true,
+                "negativeValuesFormat": "Auto",
+                "prefix": "",
+                "suffix": "",
+                "type": "Number"
+              }
+            }
+          }
+        },
+        "F4": {
+          "defaults": {
+            "format": {
+              "numberFormatInfo": {
+                "decimalPlaces": 2,
+                "displayUnits": "Auto",
+                "includeThousandSeparator": true,
+                "negativeValuesFormat": "Auto",
+                "prefix": "",
+                "suffix": "",
+                "type": "Number"
+              }
+            }
+          }
+        }
+      },
+      "referenceLines": {},
+      "showDataPlaceholder": false,
+      "title": {
+        "isVisible": true
+      }
+    }
+  },
+  "fields": {
+    "F1": {
+      "displayCategory": "Discrete",
+      "fieldName": "State",
+      "objectName": "Retail_NTO_Dataverse",
+      "role": "Dimension",
+      "type": "Field"
+    },
+    "F2": {
+      "displayCategory": "Continuous",
+      "fieldName": "Sales",
+      "function": "Sum",
+      "objectName": "Retail_NTO_Dataverse",
+      "role": "Measure",
+      "type": "Field"
+    },
+    "F3": {
+      "displayCategory": "Continuous",
+      "fieldName": "Sales",
+      "function": "Sum",
+      "objectName": "Retail_NTO_Dataverse",
+      "role": "Measure",
+      "type": "Field"
+    },
+    "F4": {
+      "displayCategory": "Continuous",
+      "fieldName": "Gross_Margin",
+      "function": "Sum",
+      "objectName": "Retail_NTO_Dataverse",
+      "role": "Measure",
+      "type": "Field"
+    }
+  },
+  "view": {
+    "label": "default",
+    "name": "Sales_by_State_default",
+    "viewSpecification": {
+      "filters": [],
+      "sorts": {
+        "columns": [],
+        "fields": {
+          "F1": {
+            "byField": "F3",
+            "order": "Descending",
+            "type": "Nested"
+          }
+        },
+        "rows": []
+      }
+    }
+  },
+  "interactions": []
+}

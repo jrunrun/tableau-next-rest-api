@@ -1,9 +1,7 @@
+import simple_salesforce
 import requests
-import json
 import xml.etree.ElementTree as ET
 
-# getSemanticModelCollection
-# GET http:///services/data/v62.0/ssot/semantic/models
 
 
 def get_session_id(
@@ -51,40 +49,8 @@ def get_session_id(
     return auth_id
 
 
-def get_semantic_data_object(org, session_id, modelApiNameOrId, dataObjectName):
-    url = f'https://{org}/services/data/v62.0/ssot/semantic/models/{modelApiNameOrId}/data-objects/{dataObjectName}'
-
-    headers = {
-        'Content-Type': 'application/json',
-        'Authorization': f'Bearer {session_id}'
-    }
-
-    req = requests.get(url, headers=headers)
-
-    print(f"Status Code: {req.status_code}")
-    print("\nHeaders:")
-    print(json.dumps(dict(req.headers), indent=2))
-    print("\nResponse Body:")
-
-    # Save the formatted JSON response to a file
-    with open('sample-responses/getSemanticDataObject-response.json', 'w') as f:   
-        json.dump(req.json(), f, indent=2)
-
-    print("Response has been saved to getSemanticDataObject-response.json")
-    print(json.dumps(req.json(), indent=2))
-
-# Example configuration
 org = 'storm-dc631f52cc1aeb.my.salesforce.com'
 username = 'jcraycraft.6890ccbb70@salesforce.com'
 password = 'orgfarm1234'
-modelApiNameOrId = 'New_Semantic_Model'
-dataObjectName = 'Retail_NTO_Dataverse'
 
-
-# Get session ID
-session_id = get_session_id(org, username, password)
-
-# Get semantic data object using session ID
-get_semantic_data_object(org, session_id, modelApiNameOrId, dataObjectName)
-
-
+get_session_id(org, username, password)

@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "createDataStreamcopy-csv.py"] 
+CMD ["python", "getDataStream.py"] 
